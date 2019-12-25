@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+
+  
+
+  
+    <meta name="author" content="Syy">
+  
+
+  
+
+  
+
+  <title>Day2 | 云之天地</title>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/default.min.css" rel="stylesheet">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <!-- header -->
+<header class="header">
+  <div class="header-navbar">
+    <div class="header-navbar-left">
+      <h1 class="header-navbar-logo">
+        <a href="/">
+          
+            <img src="https://qiniu.miiiku.xyz/src/images/logo.png" alt="云之天地" />
+          
+        </a>
+      </h1>
+    </div>
+    <div class="header-navbar-right">
+      <div class="header-navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="header-navbar-list">
+        
+          <li class="header-navbar-item"><a href="/">Home</a></li>
+        
+          <li class="header-navbar-item"><a href="/about">About</a></li>
+        
+          <li class="header-navbar-item"><a href="/links">Link</a></li>
+        
+          <li class="header-navbar-item"><a href="/tags">Tags</a></li>
+        
+          <li class="header-navbar-item"><a href="/categories">Categories</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <section id="main"><!-- 文章详情页 -->
+
+
+<!-- banner container -->
+<div class="banner-container">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <div class="banner-content post-content is-post-image">
+        <div class="post-image" style="background-image: url(http://39.108.55.37/images/1.jpg)"></div>
+        <div class="post-text">
+          <div class="type-wrap">
+            <a class="article-category-link" href="/categories/vue/">vue</a>
+          </div>
+          <h1 class="title-wrap">Day2</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Syy</strong>
+            <span>发布于</span>
+            
+  <a href="javascript:;" class="article-date">
+    <time datetime="2019-10-28T10:38:45.000Z" itemprop="datePublished">2019-10-28</time>
+  </a>
+
+          </h2>
+        </div>
+      </div>
+    
+  
+
+  
+  
+
+</div>
+
+<!-- 文章内容 -->
+
+<div class="body-container">
+  <article id="article-container" class="main-container article-container">
+    <div class="article-content">
+      
+      
+
+      <div class="article-entry">
+        <h2 id="品牌管理案例"><a href="#品牌管理案例" class="headerlink" title="品牌管理案例"></a>品牌管理案例</h2><h3 id="添加新品牌"><a href="#添加新品牌" class="headerlink" title="添加新品牌"></a>添加新品牌</h3><h3 id="删除品牌"><a href="#删除品牌" class="headerlink" title="删除品牌"></a>删除品牌</h3><h3 id="根据条件筛选品牌"><a href="#根据条件筛选品牌" class="headerlink" title="根据条件筛选品牌"></a>根据条件筛选品牌</h3><ol>
+<li>1.x 版本中的filterBy指令，在2.x中已经被废除：</li>
+</ol>
+<p><a href="https://v1-cn.vuejs.org/api/#filterBy" target="_blank" rel="noopener">filterBy - 指令</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tr v-for&#x3D;&quot;item in list | filterBy searchName in &#39;name&#39;&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;td&gt;&#123;&#123;item.id&#125;&#125;&lt;&#x2F;td&gt;</span><br><span class="line"></span><br><span class="line">  &lt;td&gt;&#123;&#123;item.name&#125;&#125;&lt;&#x2F;td&gt;</span><br><span class="line"></span><br><span class="line">  &lt;td&gt;&#123;&#123;item.ctime&#125;&#125;&lt;&#x2F;td&gt;</span><br><span class="line"></span><br><span class="line">  &lt;td&gt;</span><br><span class="line"></span><br><span class="line">    &lt;a href&#x3D;&quot;#&quot; @click.prevent&#x3D;&quot;del(item.id)&quot;&gt;删除&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">  &lt;&#x2F;td&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;tr&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在2.x版本中<a href="https://cn.vuejs.org/v2/guide/list.html#显示过滤-排序结果" target="_blank" rel="noopener">手动实现筛选的方式</a>：</li>
+</ol>
+<ul>
+<li>筛选框绑定到 VM 实例中的 <code>searchName</code> 属性：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;hr&gt; 输入筛选名称：</span><br><span class="line"></span><br><span class="line">&lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;searchName&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在使用 <code>v-for</code> 指令循环每一行数据的时候，不再直接 <code>item in list</code>，而是 <code>in</code> 一个 过滤的methods 方法，同时，把过滤条件<code>searchName</code>传递进去：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;tbody&gt;</span><br><span class="line"></span><br><span class="line">      &lt;tr v-for&#x3D;&quot;item in search(searchName)&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;td&gt;&#123;&#123;item.id&#125;&#125;&lt;&#x2F;td&gt;</span><br><span class="line"></span><br><span class="line">        &lt;td&gt;&#123;&#123;item.name&#125;&#125;&lt;&#x2F;td&gt;</span><br><span class="line"></span><br><span class="line">        &lt;td&gt;&#123;&#123;item.ctime&#125;&#125;&lt;&#x2F;td&gt;</span><br><span class="line"></span><br><span class="line">        &lt;td&gt;</span><br><span class="line"></span><br><span class="line">          &lt;a href&#x3D;&quot;#&quot; @click.prevent&#x3D;&quot;del(item.id)&quot;&gt;删除&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">        &lt;&#x2F;td&gt;</span><br><span class="line"></span><br><span class="line">      &lt;&#x2F;tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;&#x2F;tbody&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>search</code> 过滤方法中，使用 数组的 <code>filter</code> 方法进行过滤：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">search(name) &#123;</span><br><span class="line"></span><br><span class="line">  return this.list.filter(x &#x3D;&gt; &#123;</span><br><span class="line"></span><br><span class="line">    return x.name.indexOf(name) !&#x3D; -1;</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Vue调试工具vue-devtools的安装步骤和使用"><a href="#Vue调试工具vue-devtools的安装步骤和使用" class="headerlink" title="Vue调试工具vue-devtools的安装步骤和使用"></a>Vue调试工具<code>vue-devtools</code>的安装步骤和使用</h2><p><a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=zh-CN" target="_blank" rel="noopener">Vue.js devtools - 翻墙安装方式 - 推荐</a></p>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>概念：Vue.js 允许你自定义过滤器，<strong>可被用作一些常见的文本格式化</strong>。过滤器可以用在两个地方：<strong>mustache 插值和 v-bind 表达式</strong>。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示；</p>
+<h3 id="私有过滤器"><a href="#私有过滤器" class="headerlink" title="私有过滤器"></a>私有过滤器</h3><ol>
+<li>HTML元素：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;td&gt;&#123;&#123;item.ctime | dataFormat(&#39;yyyy-mm-dd&#39;)&#125;&#125;&lt;&#x2F;td&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>私有 <code>filters</code> 定义方式：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">filters: &#123; &#x2F;&#x2F; 私有局部过滤器，只能在 当前 VM 对象所控制的 View 区域进行使用</span><br><span class="line"></span><br><span class="line">    dataFormat(input, pattern &#x3D; &quot;&quot;) &#123; &#x2F;&#x2F; 在参数列表中 通过 pattern&#x3D;&quot;&quot; 来指定形参默认值，防止报错</span><br><span class="line"></span><br><span class="line">      var dt &#x3D; new Date(input);</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 获取年月日</span><br><span class="line"></span><br><span class="line">      var y &#x3D; dt.getFullYear();</span><br><span class="line"></span><br><span class="line">      var m &#x3D; (dt.getMonth() + 1).toString().padStart(2, &#39;0&#39;);</span><br><span class="line"></span><br><span class="line">      var d &#x3D; dt.getDate().toString().padStart(2, &#39;0&#39;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 如果 传递进来的字符串类型，转为小写之后，等于 yyyy-mm-dd，那么就返回 年-月-日</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 否则，就返回  年-月-日 时：分：秒</span><br><span class="line"></span><br><span class="line">      if (pattern.toLowerCase() &#x3D;&#x3D;&#x3D; &#39;yyyy-mm-dd&#39;) &#123;</span><br><span class="line"></span><br><span class="line">        return &#96;$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125;&#96;;</span><br><span class="line"></span><br><span class="line">      &#125; else &#123;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 获取时分秒</span><br><span class="line"></span><br><span class="line">        var hh &#x3D; dt.getHours().toString().padStart(2, &#39;0&#39;);</span><br><span class="line"></span><br><span class="line">        var mm &#x3D; dt.getMinutes().toString().padStart(2, &#39;0&#39;);</span><br><span class="line"></span><br><span class="line">        var ss &#x3D; dt.getSeconds().toString().padStart(2, &#39;0&#39;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        return &#96;$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125; $&#123;hh&#125;:$&#123;mm&#125;:$&#123;ss&#125;&#96;;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>使用ES6中的字符串新方法 String.prototype.padStart(maxLength, fillString=’’) 或 String.prototype.padEnd(maxLength, fillString=’’)来填充字符串；</p>
+</blockquote>
+<h3 id="全局过滤器"><a href="#全局过滤器" class="headerlink" title="全局过滤器"></a>全局过滤器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F; 定义一个全局过滤器</span><br><span class="line"></span><br><span class="line">Vue.filter(&#39;dataFormat&#39;, function (input, pattern &#x3D; &#39;&#39;) &#123;</span><br><span class="line"></span><br><span class="line">  var dt &#x3D; new Date(input);</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 获取年月日</span><br><span class="line"></span><br><span class="line">  var y &#x3D; dt.getFullYear();</span><br><span class="line"></span><br><span class="line">  var m &#x3D; (dt.getMonth() + 1).toString().padStart(2, &#39;0&#39;);</span><br><span class="line"></span><br><span class="line">  var d &#x3D; dt.getDate().toString().padStart(2, &#39;0&#39;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 如果 传递进来的字符串类型，转为小写之后，等于 yyyy-mm-dd，那么就返回 年-月-日</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 否则，就返回  年-月-日 时：分：秒</span><br><span class="line"></span><br><span class="line">  if (pattern.toLowerCase() &#x3D;&#x3D;&#x3D; &#39;yyyy-mm-dd&#39;) &#123;</span><br><span class="line"></span><br><span class="line">    return &#96;$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125;&#96;;</span><br><span class="line"></span><br><span class="line">  &#125; else &#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 获取时分秒</span><br><span class="line"></span><br><span class="line">    var hh &#x3D; dt.getHours().toString().padStart(2, &#39;0&#39;);</span><br><span class="line"></span><br><span class="line">    var mm &#x3D; dt.getMinutes().toString().padStart(2, &#39;0&#39;);</span><br><span class="line"></span><br><span class="line">    var ss &#x3D; dt.getSeconds().toString().padStart(2, &#39;0&#39;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    return &#96;$&#123;y&#125;-$&#123;m&#125;-$&#123;d&#125; $&#123;hh&#125;:$&#123;mm&#125;:$&#123;ss&#125;&#96;;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>注意：当有局部和全局两个名称相同的过滤器时候，会以就近原则进行调用，即：局部过滤器优先于全局过滤器被调用！</p>
+</blockquote>
+<h2 id="键盘修饰符以及自定义键盘修饰符"><a href="#键盘修饰符以及自定义键盘修饰符" class="headerlink" title="键盘修饰符以及自定义键盘修饰符"></a>键盘修饰符以及自定义键盘修饰符</h2><h3 id="1-x中自定义键盘修饰符【了解即可】"><a href="#1-x中自定义键盘修饰符【了解即可】" class="headerlink" title="1.x中自定义键盘修饰符【了解即可】"></a>1.x中自定义键盘修饰符【了解即可】</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Vue.directive(&#39;on&#39;).keyCodes.f2 &#x3D; 113;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-x中自定义键盘修饰符"><a href="#2-x中自定义键盘修饰符" class="headerlink" title="2.x中自定义键盘修饰符"></a><a href="https://cn.vuejs.org/v2/guide/events.html#键值修饰符" target="_blank" rel="noopener">2.x中自定义键盘修饰符</a></h3><ol>
+<li>通过<code>Vue.config.keyCodes.名称 = 按键值</code>来自定义案件修饰符的别名：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Vue.config.keyCodes.f2 &#x3D; 113;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用自定义的按键修饰符：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;name&quot; @keyup.f2&#x3D;&quot;add&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a><a href="https://cn.vuejs.org/v2/guide/custom-directive.html" target="_blank" rel="noopener">自定义指令</a></h2><ol>
+<li>自定义全局和局部的 自定义指令：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F; 自定义全局指令 v-focus，为绑定的元素自动获取焦点：</span><br><span class="line"></span><br><span class="line">Vue.directive(&#39;focus&#39;, &#123;</span><br><span class="line"></span><br><span class="line">  inserted: function (el) &#123; &#x2F;&#x2F; inserted 表示被绑定元素插入父节点时调用</span><br><span class="line"></span><br><span class="line">    el.focus();</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 自定义局部指令 v-color 和 v-font-weight，为绑定的元素设置指定的字体颜色 和 字体粗细：</span><br><span class="line"></span><br><span class="line">  directives: &#123;</span><br><span class="line"></span><br><span class="line">    color: &#123; &#x2F;&#x2F; 为元素设置指定的字体颜色</span><br><span class="line"></span><br><span class="line">      bind(el, binding) &#123;</span><br><span class="line"></span><br><span class="line">        el.style.color &#x3D; binding.value;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#39;font-weight&#39;: function (el, binding2) &#123; &#x2F;&#x2F; 自定义指令的简写形式，等同于定义了 bind 和 update 两个钩子函数</span><br><span class="line"></span><br><span class="line">      el.style.fontWeight &#x3D; binding2.value;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>自定义指令的使用方式：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;searchName&quot; v-focus v-color&#x3D;&quot;&#39;red&#39;&quot; v-font-weight&#x3D;&quot;900&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Vue-1-x-中-自定义元素指令【已废弃-了解即可】"><a href="#Vue-1-x-中-自定义元素指令【已废弃-了解即可】" class="headerlink" title="Vue 1.x 中 自定义元素指令【已废弃,了解即可】"></a>Vue 1.x 中 自定义元素指令【已废弃,了解即可】</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue.elementDirective(&#39;red-color&#39;, &#123;</span><br><span class="line">  bind: function () &#123;</span><br><span class="line">    this.el.style.color &#x3D; &#39;red&#39;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>使用方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;red-color&gt;1232&lt;&#x2F;red-color&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="vue实例的生命周期"><a href="#vue实例的生命周期" class="headerlink" title="vue实例的生命周期"></a><a href="https://cn.vuejs.org/v2/guide/instance.html#实例生命周期" target="_blank" rel="noopener">vue实例的生命周期</a></h2><ul>
+<li>什么是生命周期：从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件，这些事件，统称为生命周期！</li>
+<li><a href="https://cn.vuejs.org/v2/api/#选项-生命周期钩子" target="_blank" rel="noopener">生命周期钩子</a>：就是生命周期事件的别名而已；</li>
+<li>生命周期钩子 = 生命周期函数 = 生命周期事件</li>
+<li>主要的生命周期函数分类：<ul>
+<li>创建期间的生命周期函数：<ul>
+<li>beforeCreate：实例刚在内存中被创建出来，此时，还没有初始化好 data 和 methods 属性</li>
+<li>created：实例已经在内存中创建OK，此时 data 和 methods 已经创建OK，此时还没有开始 编译模板</li>
+<li>beforeMount：此时已经完成了模板的编译，但是还没有挂载到页面中</li>
+<li>mounted：此时，已经将编译好的模板，挂载到了页面指定的容器中显示</li>
+</ul>
+</li>
+<li>运行期间的生命周期函数：<ul>
+<li>beforeUpdate：状态更新之前执行此函数， 此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，因为此时还没有开始重新渲染DOM节点</li>
+<li>updated：实例更新完毕之后调用此函数，此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面已经被重新渲染好了！</li>
+</ul>
+</li>
+<li>销毁期间的生命周期函数：<ul>
+<li>beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。</li>
+<li>destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="vue-resource-实现-get-post-jsonp请求"><a href="#vue-resource-实现-get-post-jsonp请求" class="headerlink" title="vue-resource 实现 get, post, jsonp请求"></a><a href="https://github.com/pagekit/vue-resource" target="_blank" rel="noopener">vue-resource 实现 get, post, jsonp请求</a></h2><p>除了 vue-resource 之外，还可以使用 <code>axios</code> 的第三方包实现实现数据的请求</p>
+<ol>
+<li>之前的学习中，如何发起数据请求？</li>
+<li>常见的数据请求类型？  get  post jsonp</li>
+<li>测试的URL请求资源地址：<ul>
+<li>get请求地址： <a href="http://vue.studyit.io/api/getlunbo" target="_blank" rel="noopener">http://vue.studyit.io/api/getlunbo</a></li>
+<li>post请求地址：<a href="http://vue.studyit.io/api/post" target="_blank" rel="noopener">http://vue.studyit.io/api/post</a></li>
+<li>jsonp请求地址：<a href="http://vue.studyit.io/api/jsonp" target="_blank" rel="noopener">http://vue.studyit.io/api/jsonp</a></li>
+</ul>
+</li>
+<li>JSONP的实现原理<ul>
+<li>由于浏览器的安全性限制，不允许AJAX访问 协议不同、域名不同、端口号不同的 数据接口，浏览器认为这种访问不安全；</li>
+<li>可以通过动态创建script标签的形式，把script标签的src属性，指向数据接口的地址，因为script标签不存在跨域限制，这种数据获取方式，称作JSONP（注意：根据JSONP的实现原理，知晓，JSONP只支持Get请求）；</li>
+<li>具体实现过程：<ul>
+<li>先在客户端定义一个回调方法，预定义对数据的操作；</li>
+<li>再把这个回调方法的名称，通过URL传参的形式，提交到服务器的数据接口；</li>
+<li>服务器数据接口组织好要发送给客户端的数据，再拿着客户端传递过来的回调方法名称，拼接出一个调用这个方法的字符串，发送给客户端去解析执行；</li>
+<li>客户端拿到服务器返回的字符串之后，当作Script脚本去解析执行，这样就能够拿到JSONP的数据了；</li>
+</ul>
+</li>
+<li>带大家通过 Node.js ，来手动实现一个JSONP的请求例子；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">const http &#x3D; require(&#39;http&#39;);</span><br><span class="line">&#x2F;&#x2F; 导入解析 URL 地址的核心模块</span><br><span class="line">const urlModule &#x3D; require(&#39;url&#39;);</span><br><span class="line"></span><br><span class="line">const server &#x3D; http.createServer();</span><br><span class="line">&#x2F;&#x2F; 监听 服务器的 request 请求事件，处理每个请求</span><br><span class="line">server.on(&#39;request&#39;, (req, res) &#x3D;&gt; &#123;</span><br><span class="line">  const url &#x3D; req.url;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 解析客户端请求的URL地址</span><br><span class="line">  var info &#x3D; urlModule.parse(url, true);</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 如果请求的 URL 地址是 &#x2F;getjsonp ，则表示要获取JSONP类型的数据</span><br><span class="line">  if (info.pathname &#x3D;&#x3D;&#x3D; &#39;&#x2F;getjsonp&#39;) &#123;</span><br><span class="line">    &#x2F;&#x2F; 获取客户端指定的回调函数的名称</span><br><span class="line">    var cbName &#x3D; info.query.callback;</span><br><span class="line">    &#x2F;&#x2F; 手动拼接要返回给客户端的数据对象</span><br><span class="line">    var data &#x3D; &#123;</span><br><span class="line">      name: &#39;zs&#39;,</span><br><span class="line">      age: 22,</span><br><span class="line">      gender: &#39;男&#39;,</span><br><span class="line">      hobby: [&#39;吃饭&#39;, &#39;睡觉&#39;, &#39;运动&#39;]</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 拼接出一个方法的调用，在调用这个方法的时候，把要发送给客户端的数据，序列化为字符串，作为参数传递给这个调用的方法：</span><br><span class="line">    var result &#x3D; &#96;$&#123;cbName&#125;($&#123;JSON.stringify(data)&#125;)&#96;;</span><br><span class="line">    &#x2F;&#x2F; 将拼接好的方法的调用，返回给客户端去解析执行</span><br><span class="line">    res.end(result);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    res.end(&#39;404&#39;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(3000, () &#x3D;&gt; &#123;</span><br><span class="line">  console.log(&#39;server running at http:&#x2F;&#x2F;127.0.0.1:3000&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>vue-resource 的配置步骤：<ul>
+<li>直接在页面中，通过<code>script</code>标签，引入 <code>vue-resource</code> 的脚本文件；</li>
+<li>注意：引用的先后顺序是：先引用 <code>Vue</code> 的脚本文件，再引用 <code>vue-resource</code> 的脚本文件；</li>
+</ul>
+</li>
+<li>发送get请求：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getInfo() &#123; &#x2F;&#x2F; get 方式获取数据</span><br><span class="line">  this.$http.get(&#39;http:&#x2F;&#x2F;127.0.0.1:8899&#x2F;api&#x2F;getlunbo&#39;).then(res &#x3D;&gt; &#123;</span><br><span class="line">    console.log(res.body);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>发送post请求：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">postInfo() &#123;</span><br><span class="line">  var url &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8899&#x2F;api&#x2F;post&#39;;</span><br><span class="line">  &#x2F;&#x2F; post 方法接收三个参数：</span><br><span class="line">  &#x2F;&#x2F; 参数1： 要请求的URL地址</span><br><span class="line">  &#x2F;&#x2F; 参数2： 要发送的数据对象</span><br><span class="line">  &#x2F;&#x2F; 参数3： 指定post提交的编码类型为 application&#x2F;x-www-form-urlencoded</span><br><span class="line">  this.$http.post(url, &#123; name: &#39;zs&#39; &#125;, &#123; emulateJSON: true &#125;).then(res &#x3D;&gt; &#123;</span><br><span class="line">    console.log(res.body);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>发送JSONP请求获取数据：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">jsonpInfo() &#123; &#x2F;&#x2F; JSONP形式从服务器获取数据</span><br><span class="line">  var url &#x3D; &#39;http:&#x2F;&#x2F;127.0.0.1:8899&#x2F;api&#x2F;jsonp&#39;;</span><br><span class="line">  this.$http.jsonp(url).then(res &#x3D;&gt; &#123;</span><br><span class="line">    console.log(res.body);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="配置本地数据库和数据接口API"><a href="#配置本地数据库和数据接口API" class="headerlink" title="配置本地数据库和数据接口API"></a>配置本地数据库和数据接口API</h2><ol>
+<li>先解压安装 <code>PHPStudy</code>;</li>
+<li>解压安装 <code>Navicat</code> 这个数据库可视化工具，并激活；</li>
+<li>打开 <code>Navicat</code> 工具，新建空白数据库，名为 <code>dtcmsdb4</code>;</li>
+<li>双击新建的数据库，连接上这个空白数据库，在新建的数据库上<code>右键</code> -&gt; <code>运行SQL文件</code>，选择并执行 <code>dtcmsdb4.sql</code> 这个数据库脚本文件；如果执行不报错，则数据库导入完成；</li>
+<li>进入文件夹 <code>vuecms3_nodejsapi</code> 内部，执行 <code>npm i</code> 安装所有的依赖项；</li>
+<li>先确保本机安装了 <code>nodemon</code>, 没有安装，则运行 <code>npm i nodemon -g</code> 进行全局安装，安装完毕后，进入到 <code>vuecms3_nodejsapi</code>目录 -&gt; <code>src</code>目录 -&gt; 双击运行 <code>start.bat</code></li>
+<li>如果API启动失败，请检查 PHPStudy 是否正常开启，同时，检查 <code>app.js</code> 中第 <code>14行</code> 中数据库连接配置字符串是否正确；PHPStudy 中默认的 用户名是root，默认的密码也是root</li>
+</ol>
+<h2 id="品牌管理改造"><a href="#品牌管理改造" class="headerlink" title="品牌管理改造"></a>品牌管理改造</h2><h3 id="展示品牌列表"><a href="#展示品牌列表" class="headerlink" title="展示品牌列表"></a>展示品牌列表</h3><h3 id="添加品牌数据"><a href="#添加品牌数据" class="headerlink" title="添加品牌数据"></a>添加品牌数据</h3><h3 id="删除品牌数据"><a href="#删除品牌数据" class="headerlink" title="删除品牌数据"></a>删除品牌数据</h3><h2 id="Vue中的动画"><a href="#Vue中的动画" class="headerlink" title="Vue中的动画"></a><a href="https://cn.vuejs.org/v2/guide/transitions.html" target="_blank" rel="noopener">Vue中的动画</a></h2><p>为什么要有动画：动画能够提高用户的体验，帮助用户更好的理解页面中的功能；</p>
+<h3 id="使用过渡类名"><a href="#使用过渡类名" class="headerlink" title="使用过渡类名"></a>使用过渡类名</h3><ol>
+<li>HTML结构：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;动起来&quot; @click&#x3D;&quot;myAnimate&quot;&gt;</span><br><span class="line">    &lt;!-- 使用 transition 将需要过渡的元素包裹起来 --&gt;</span><br><span class="line">    &lt;transition name&#x3D;&quot;fade&quot;&gt;</span><br><span class="line">      &lt;div v-show&#x3D;&quot;isshow&quot;&gt;动画哦&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;transition&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure></li>
+<li>VM 实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">var vm &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    isshow: false</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    myAnimate() &#123;</span><br><span class="line">      this.isshow &#x3D; !this.isshow;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li>定义两组类样式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 定义进入和离开时候的过渡状态 *&#x2F;</span><br><span class="line">    .fade-enter-active,</span><br><span class="line">    .fade-leave-active &#123;</span><br><span class="line">      transition: all 0.2s ease;</span><br><span class="line">      position: absolute;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;* 定义进入过渡的开始状态 和 离开过渡的结束状态 *&#x2F;</span><br><span class="line">    .fade-enter,</span><br><span class="line">    .fade-leave-to &#123;</span><br><span class="line">      opacity: 0;</span><br><span class="line">      transform: translateX(100px);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="使用第三方-CSS-动画库"><a href="#使用第三方-CSS-动画库" class="headerlink" title="使用第三方 CSS 动画库"></a><a href="https://cn.vuejs.org/v2/guide/transitions.html#自定义过渡类名" target="_blank" rel="noopener">使用第三方 CSS 动画库</a></h3><ol>
+<li>导入动画类库：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;.&#x2F;lib&#x2F;animate.css&quot;&gt;</span><br></pre></td></tr></table></figure></li>
+<li>定义 transition 及属性：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;transition</span><br><span class="line">	enter-active-class&#x3D;&quot;fadeInRight&quot;</span><br><span class="line">    leave-active-class&#x3D;&quot;fadeOutRight&quot;</span><br><span class="line">    :duration&#x3D;&quot;&#123; enter: 500, leave: 800 &#125;&quot;&gt;</span><br><span class="line">  	&lt;div class&#x3D;&quot;animated&quot; v-show&#x3D;&quot;isshow&quot;&gt;动画哦&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;transition&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="使用动画钩子函数"><a href="#使用动画钩子函数" class="headerlink" title="使用动画钩子函数"></a>使用动画钩子函数</h3><ol>
+<li>定义 transition 组件以及三个钩子函数：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;切换动画&quot; @click&#x3D;&quot;isshow &#x3D; !isshow&quot;&gt;</span><br><span class="line">    &lt;transition</span><br><span class="line">    @before-enter&#x3D;&quot;beforeEnter&quot;</span><br><span class="line">    @enter&#x3D;&quot;enter&quot;</span><br><span class="line">    @after-enter&#x3D;&quot;afterEnter&quot;&gt;</span><br><span class="line">      &lt;div v-if&#x3D;&quot;isshow&quot; class&#x3D;&quot;show&quot;&gt;OK&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;transition&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure></li>
+<li>定义三个 methods 钩子方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">        beforeEnter(el) &#123; &#x2F;&#x2F; 动画进入之前的回调</span><br><span class="line">          el.style.transform &#x3D; &#39;translateX(500px)&#39;;</span><br><span class="line">        &#125;,</span><br><span class="line">        enter(el, done) &#123; &#x2F;&#x2F; 动画进入完成时候的回调</span><br><span class="line">          el.offsetWidth;</span><br><span class="line">          el.style.transform &#x3D; &#39;translateX(0px)&#39;;</span><br><span class="line">          done();</span><br><span class="line">        &#125;,</span><br><span class="line">        afterEnter(el) &#123; &#x2F;&#x2F; 动画进入完成之后的回调</span><br><span class="line">          this.isshow &#x3D; !this.isshow;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></li>
+<li>定义动画过渡时长和样式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.show&#123;</span><br><span class="line">      transition: all 0.4s ease;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h3 id="v-for-的列表过渡"><a href="#v-for-的列表过渡" class="headerlink" title="v-for 的列表过渡"></a><a href="https://cn.vuejs.org/v2/guide/transitions.html#列表的进入和离开过渡" target="_blank" rel="noopener">v-for 的列表过渡</a></h3><ol>
+<li>定义过渡样式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .list-enter,</span><br><span class="line">    .list-leave-to &#123;</span><br><span class="line">      opacity: 0;</span><br><span class="line">      transform: translateY(10px);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .list-enter-active,</span><br><span class="line">    .list-leave-active &#123;</span><br><span class="line">      transition: all 0.3s ease;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure></li>
+<li>定义DOM结构，其中，需要使用 transition-group 组件把v-for循环的列表包裹起来：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;txt&quot; @keyup.enter&#x3D;&quot;add&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;transition-group tag&#x3D;&quot;ul&quot; name&#x3D;&quot;list&quot;&gt;</span><br><span class="line">    &lt;li v-for&#x3D;&quot;(item, i) in list&quot; :key&#x3D;&quot;i&quot;&gt;&#123;&#123;item&#125;&#125;&lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;transition-group&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure></li>
+<li>定义 VM中的结构：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">var vm &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    txt: &#39;&#39;,</span><br><span class="line">    list: [1, 2, 3, 4]</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    add() &#123;</span><br><span class="line">      this.list.push(this.txt);</span><br><span class="line">      this.txt &#x3D; &#39;&#39;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h3 id="列表的排序过渡"><a href="#列表的排序过渡" class="headerlink" title="列表的排序过渡"></a>列表的排序过渡</h3><p><code>&lt;transition-group&gt;</code> 组件还有一个特殊之处。不仅可以进入和离开动画，<strong>还可以改变定位</strong>。要使用这个新功能只需了解新增的 <code>v-move</code> 特性，<strong>它会在元素的改变定位的过程中应用</strong>。</p>
+<ul>
+<li><code>v-move</code> 和 <code>v-leave-active</code> 结合使用，能够让列表的过渡更加平缓柔和：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.v-move&#123;</span><br><span class="line">  transition: all 0.8s ease;</span><br><span class="line">&#125;</span><br><span class="line">.v-leave-active&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ol>
+<li><a href="https://v1-cn.vuejs.org/" target="_blank" rel="noopener">vue.js 1.x 文档</a></li>
+<li><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">vue.js 2.x 文档</a></li>
+<li><a href="http://www.css88.com/archives/7715" target="_blank" rel="noopener">String.prototype.padStart(maxLength, fillString)</a></li>
+<li><a href="http://www.cnblogs.com/wuhua1/p/6686237.html" target="_blank" rel="noopener">js 里面的键盘事件对应的键码</a></li>
+<li><a href="https://github.com/pagekit/vue-resource" target="_blank" rel="noopener">pagekit/vue-resource</a></li>
+<li><a href="https://jingyan.baidu.com/article/a65957f4976aad24e67f9b9b.html" target="_blank" rel="noopener">navicat如何导入sql文件和导出sql文件</a></li>
+<li><a href="http://cubic-bezier.com/#.4,-0.3,1,.33" target="_blank" rel="noopener">贝塞尔在线生成器</a></li>
+</ol>
+
+      </div>
+
+      <div class="article-footer">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">#vue</a></li></ul>
+      </div>
+
+      <div class="article-navs">
+        
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+      <div id="article-nav-newer" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(http://39.108.55.37/images/1.jpg)"></div>
+          
+          <a class="card-link article-nav-link" href="/2019/10/28/Vue.js-day1/"></a>
+          <strong class="article-nav-caption">Newer</strong>
+          <p class="article-nav-title">
+            
+              Vue.js-day1
+            
+          </p>
+        </article>
+      </div>
+    
+    
+      <div id="article-nav-older" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(http://39.108.55.37/images/4.jpg)"></div>
+          
+          <a class="card-link article-nav-link" href="/2019/10/28/day4/"></a>
+          <strong class="article-nav-caption">Older</strong>
+          <p class="article-nav-title">
+            
+              day4
+            
+          </p>
+        </article>
+      </div>
+    
+  </div>
+</nav>
+
+      </div>
+      
+      
+
+  
+  <div class="valine-container">
+    <div id="valine_thread" class="valine-thread"></div>
+  </div>
+
+  
+  
+
+
+    </div>
+  </article>
+</div></section>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    <p>&copy; 2019 <a href="/" target="_blank">Syy</a></p>
+
+    
+      <p id="hitokoto"></p>
+      <script src="https://v1.hitokoto.cn/?c=a&amp;encode=js&select=%23hitokoto" defer></script>
+    
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank">flex-block</a></p>
+  </div>
+</footer>
+  </div>
+
+  
+  <!-- 尾部其他内容 -->
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+  <!-- aplayer 音频 start -->
+  
+<link rel="stylesheet" href="/lib/APlayer.min.css">
+
+  
+<script src="/lib/APlayer.min.js"></script>
+
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        new APlayer({
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          lrcType: 3,
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        });
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
+
+<!-- dplayer 视频 start -->
+
+<link rel="stylesheet" href="/lib/DPlayer.min.css">
+
+
+<script src="/lib/DPlayer.min.js"></script>
+
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let cover = el.dataset.cover;
+      new DPlayer({
+        container: el,
+        video: { url: url, pic: cover },
+        theme: "#b7daff",
+        autoplay: false,
+        loop: false,
+        mutex: true,
+      });
+    });
+  }
+</script>
+<!-- dplayer 视频 end -->
+
+
+<!-- waterfall 瀑布流 start -->
+
+<script src="/lib/waterfall.min.js"></script>
+
+<script type="text/javascript">
+
+const waterfalls = document.querySelectorAll(".waterfall-container");
+
+if (waterfalls && waterfalls.length > 0) {
+  waterfalls.forEach((waterfall, index) => {
+    let cls = "waterfall-container-" + index;
+    waterfall.classList.add(cls);
+    initWaterfall(cls, waterfall);
+  });
+}
+
+function initWaterfall(selector, el) {
+  const options = {};
+  if (Object.keys(el.dataset).length > 0) {
+    for (let k in el.dataset) {
+      options[k] = el.dataset[k];
+    }
+  }
+  waterfall(`.${selector}`, options);
+}
+</script>
+<!-- waterfall 瀑布流 end -->
+
+
+  <!-- zoom start -->
+  
+<script src="/lib/zoom.min.js"></script>
+
+  <script type="text/javascript">
+    document.querySelector(".article-content") && zoom(".article-content");
+  </script>
+  <!-- zoom end -->
+  
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

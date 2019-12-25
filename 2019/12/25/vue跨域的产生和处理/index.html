@@ -17,7 +17,7 @@
 
   
 
-  <title>Hello World | 云之天地</title>
+  <title>vue跨域的产生和处理 | 云之天地</title>
 
   
 
@@ -92,18 +92,19 @@
   
   
     
-      <div class="banner-content post-content no-post-image">
+      <div class="banner-content post-content is-post-image">
+        <div class="post-image" style="background-image: url(http://39.108.55.37/images/2.jpg)"></div>
         <div class="post-text">
           <div class="type-wrap">
-            
+            <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/vue/">vue</a>
           </div>
-          <h1 class="title-wrap">Hello World</h1>
+          <h1 class="title-wrap">vue跨域的产生和处理</h1>
           <h2 class="title-sub-wrap">
             <strong>Syy</strong>
             <span>发布于</span>
             
   <a href="javascript:;" class="article-date">
-    <time datetime="2019-12-24T15:28:39.649Z" itemprop="datePublished">2019-12-24</time>
+    <time datetime="2019-12-25T12:37:18.737Z" itemprop="datePublished">2019-12-25</time>
   </a>
 
           </h2>
@@ -126,28 +127,45 @@
       
 
       <div class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>​        今天遇到个问题，老师问什么是跨域？我突然发现自己知道跨域怎么解决，却不知道跨域是怎么定义的，所以就研究了一下什么是跨域以及怎样解决？</p>
+<h3 id="1-跨域的产生"><a href="#1-跨域的产生" class="headerlink" title="1.跨域的产生"></a>1.跨域的产生</h3><p>　　浏览器为了保证用户信息的安全，防止恶意的网站窃取数据，所以所有浏览器都实行同源政策，而同源所指的是<code>协议相同、域名相同和端口不同</code>，而产生跨域就是因为同源问题，当其中一个不同时，就导致跨域的产生</p>
+<h3 id="2-VUE跨域的解决"><a href="#2-VUE跨域的解决" class="headerlink" title="2.VUE跨域的解决"></a>2.<code>VUE</code>跨域的解决</h3><p>​        在根目录下建立<code>vue.config.js</code>并且插入以下代码，然后在</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">		devServer: &#123;</span><br><span class="line">			proxy: &#123;</span><br><span class="line">				<span class="string">'/api'</span>: &#123;</span><br><span class="line">					<span class="comment">// 此处的写法，目的是为了 将 /api 替换成 http://目标网址</span></span><br><span class="line">					target: <span class="string">"http://web.juhe.cn"</span>,</span><br><span class="line">					<span class="comment">// 允许跨域</span></span><br><span class="line">					changeOrigin: <span class="literal">true</span>,</span><br><span class="line">					<span class="comment">// ws: true,</span></span><br><span class="line">					pathRewrite: &#123;</span><br><span class="line">						<span class="string">'^/api'</span>: <span class="string">'/'</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>然后要用到时例如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.axios.get(<span class="string">'/api'</span> + <span class="string">'http://web.juhe.cn'</span>).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       </div>
 
       <div class="article-footer">
-        
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/" rel="tag">#html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%A8%E5%9F%9F/" rel="tag">#跨域</a></li></ul>
       </div>
 
       <div class="article-navs">
         
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+    
+      <div id="article-nav-older" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(http://39.108.55.37/images/1.jpg)"></div>
+          
+          <a class="card-link article-nav-link" href="/2019/10/28/Vue.js-day1/"></a>
+          <strong class="article-nav-caption">Older</strong>
+          <p class="article-nav-title">
+            
+              Vue.js-day1
+            
+          </p>
+        </article>
+      </div>
+    
+  </div>
+</nav>
+
       </div>
       
       

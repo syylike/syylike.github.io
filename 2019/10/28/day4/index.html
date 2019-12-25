@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+
+  
+
+  
+    <meta name="author" content="Syy">
+  
+
+  
+
+  
+
+  <title>day4 | 云之天地</title>
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/default.min.css" rel="stylesheet">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <!-- header -->
+<header class="header">
+  <div class="header-navbar">
+    <div class="header-navbar-left">
+      <h1 class="header-navbar-logo">
+        <a href="/">
+          
+            <img src="https://qiniu.miiiku.xyz/src/images/logo.png" alt="云之天地" />
+          
+        </a>
+      </h1>
+    </div>
+    <div class="header-navbar-right">
+      <div class="header-navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="header-navbar-list">
+        
+          <li class="header-navbar-item"><a href="/">Home</a></li>
+        
+          <li class="header-navbar-item"><a href="/about">About</a></li>
+        
+          <li class="header-navbar-item"><a href="/links">Link</a></li>
+        
+          <li class="header-navbar-item"><a href="/tags">Tags</a></li>
+        
+          <li class="header-navbar-item"><a href="/categories">Categories</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <section id="main"><!-- 文章详情页 -->
+
+
+<!-- banner container -->
+<div class="banner-container">
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <div class="banner-content post-content is-post-image">
+        <div class="post-image" style="background-image: url(http://39.108.55.37/images/4.jpg)"></div>
+        <div class="post-text">
+          <div class="type-wrap">
+            <a class="article-category-link" href="/categories/vue/">vue</a>
+          </div>
+          <h1 class="title-wrap">day4</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Syy</strong>
+            <span>发布于</span>
+            
+  <a href="javascript:;" class="article-date">
+    <time datetime="2019-10-28T10:38:45.000Z" itemprop="datePublished">2019-10-28</time>
+  </a>
+
+          </h2>
+        </div>
+      </div>
+    
+  
+
+  
+  
+
+</div>
+
+<!-- 文章内容 -->
+
+<div class="body-container">
+  <article id="article-container" class="main-container article-container">
+    <div class="article-content">
+      
+      
+
+      <div class="article-entry">
+        <h2 id="父组件向子组件传值"><a href="#父组件向子组件传值" class="headerlink" title="父组件向子组件传值"></a>父组件向子组件传值</h2><ol>
+<li>组件实例定义方式，注意：一定要使用<code>props</code>属性来定义父组件传递过来的数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    &#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">    var vm &#x3D; new Vue(&#123;</span><br><span class="line">      el: &#39;#app&#39;,</span><br><span class="line">      data: &#123;</span><br><span class="line">        msg: &#39;这是父组件中的消息&#39;</span><br><span class="line">      &#125;,</span><br><span class="line">      components: &#123;</span><br><span class="line">        son: &#123;</span><br><span class="line">          template: &#39;&lt;h1&gt;这是子组件 --- &#123;&#123;finfo&#125;&#125;&lt;&#x2F;h1&gt;&#39;,</span><br><span class="line">          props: [&#39;finfo&#39;]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>使用<code>v-bind</code>或简化指令，将数据传递到子组件中：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;son :finfo&#x3D;&quot;msg&quot;&gt;&lt;&#x2F;son&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="子组件向父组件传值"><a href="#子组件向父组件传值" class="headerlink" title="子组件向父组件传值"></a>子组件向父组件传值</h2><ol>
+<li>原理：父组件将方法的引用，传递到子组件内部，子组件在内部调用父组件传递过来的方法，同时把要发送给父组件的数据，在调用方法的时候当作参数传递进去；</li>
+<li>父组件将方法的引用传递给子组件，其中，<code>getMsg</code>是父组件中<code>methods</code>中定义的方法名称，<code>func</code>是子组件调用传递过来方法时候的方法名称<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;son @func&#x3D;&quot;getMsg&quot;&gt;&lt;&#x2F;son&gt;</span><br></pre></td></tr></table></figure></li>
+<li>子组件内部通过<code>this.$emit(&#39;方法名&#39;, 要传递的数据)</code>方式，来调用父组件中的方法，同时把数据传递给父组件使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;!-- 引用父组件 --&gt;</span><br><span class="line">    &lt;son @func&#x3D;&quot;getMsg&quot;&gt;&lt;&#x2F;son&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 组件模板定义 --&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;x-template&quot; id&#x3D;&quot;son&quot;&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;向父组件传值&quot; @click&#x3D;&quot;sendMsg&quot; &#x2F;&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    &#x2F;&#x2F; 子组件的定义方式</span><br><span class="line">    Vue.component(&#39;son&#39;, &#123;</span><br><span class="line">      template: &#39;#son&#39;, &#x2F;&#x2F; 组件模板Id</span><br><span class="line">      methods: &#123;</span><br><span class="line">        sendMsg() &#123; &#x2F;&#x2F; 按钮的点击事件</span><br><span class="line">          this.$emit(&#39;func&#39;, &#39;OK&#39;); &#x2F;&#x2F; 调用父组件传递过来的方法，同时把数据传递出去</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">    var vm &#x3D; new Vue(&#123;</span><br><span class="line">      el: &#39;#app&#39;,</span><br><span class="line">      data: &#123;&#125;,</span><br><span class="line">      methods: &#123;</span><br><span class="line">        getMsg(val)&#123; &#x2F;&#x2F; 子组件中，通过 this.$emit() 实际调用的方法，在此进行定义</span><br><span class="line">          alert(val);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="组件中data和props的区别"><a href="#组件中data和props的区别" class="headerlink" title="组件中data和props的区别"></a>组件中data和props的区别</h2><h2 id="评论列表案例"><a href="#评论列表案例" class="headerlink" title="评论列表案例"></a>评论列表案例</h2><p>目标：主要练习父子组件之间传值</p>
+<h2 id="使用-this-refs-来获取元素和组件"><a href="#使用-this-refs-来获取元素和组件" class="headerlink" title="使用 this.$refs 来获取元素和组件"></a>使用 <code>this.$refs</code> 来获取元素和组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;获取元素内容&quot; @click&#x3D;&quot;getElement&quot; &#x2F;&gt;</span><br><span class="line">    &lt;!-- 使用 ref 获取元素 --&gt;</span><br><span class="line">    &lt;h1 ref&#x3D;&quot;myh1&quot;&gt;这是一个大大的H1&lt;&#x2F;h1&gt;</span><br><span class="line"></span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    &lt;!-- 使用 ref 获取子组件 --&gt;</span><br><span class="line">    &lt;my-com ref&#x3D;&quot;mycom&quot;&gt;&lt;&#x2F;my-com&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  Vue.component(&#39;my-com&#39;, &#123;</span><br><span class="line">    template: &#39;&lt;h5&gt;这是一个子组件&lt;&#x2F;h5&gt;&#39;,</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        name: &#39;子组件&#39;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">  var vm &#x3D; new Vue(&#123;</span><br><span class="line">    el: &#39;#app&#39;,</span><br><span class="line">    data: &#123;&#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      getElement() &#123;</span><br><span class="line">        &#x2F;&#x2F; 通过 this.$refs 来获取元素</span><br><span class="line">        console.log(this.$refs.myh1.innerText);</span><br><span class="line">        &#x2F;&#x2F; 通过 this.$refs 来获取组件</span><br><span class="line">        console.log(this.$refs.mycom.name);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="什么是路由"><a href="#什么是路由" class="headerlink" title="什么是路由"></a>什么是路由</h2><ol>
+<li><p><strong>后端路由：</strong>对于普通的网站，所有的超链接都是URL地址，所有的URL地址都对应服务器上对应的资源；</p>
+</li>
+<li><p><strong>前端路由：</strong>对于单页面应用程序来说，主要通过URL中的hash(#号)来实现不同页面之间的切换，同时，hash有一个特点：HTTP请求中不会包含hash相关的内容；所以，单页面程序中的页面跳转主要用hash实现；</p>
+</li>
+<li><p>在单页面应用程序中，这种通过hash改变来切换页面的方式，称作前端路由（区别于后端路由）；</p>
+</li>
+</ol>
+<h2 id="在-vue-中使用-vue-router"><a href="#在-vue-中使用-vue-router" class="headerlink" title="在 vue 中使用 vue-router"></a>在 vue 中使用 vue-router</h2><ol>
+<li>导入 vue-router 组件类库：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 1. 导入 vue-router 组件类库 --&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;.&#x2F;lib&#x2F;vue-router-2.7.0.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>使用 router-link 组件来导航<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 2. 使用 router-link 组件来导航 --&gt;</span><br><span class="line">&lt;router-link to&#x3D;&quot;&#x2F;login&quot;&gt;登录&lt;&#x2F;router-link&gt;</span><br><span class="line">&lt;router-link to&#x3D;&quot;&#x2F;register&quot;&gt;注册&lt;&#x2F;router-link&gt;</span><br></pre></td></tr></table></figure></li>
+<li>使用 router-view 组件来显示匹配到的组件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 3. 使用 router-view 组件来显示匹配到的组件 --&gt;</span><br><span class="line">&lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br></pre></td></tr></table></figure></li>
+<li>创建使用<code>Vue.extend</code>创建组件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 4.1 使用 Vue.extend 来创建登录组件</span><br><span class="line">var login &#x3D; Vue.extend(&#123;</span><br><span class="line">  template: &#39;&lt;h1&gt;登录组件&lt;&#x2F;h1&gt;&#39;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 4.2 使用 Vue.extend 来创建注册组件</span><br><span class="line">var register &#x3D; Vue.extend(&#123;</span><br><span class="line">  template: &#39;&lt;h1&gt;注册组件&lt;&#x2F;h1&gt;&#39;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li>创建一个路由 router 实例，通过 routers 属性来定义路由匹配规则<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 5. 创建一个路由 router 实例，通过 routers 属性来定义路由匹配规则</span><br><span class="line">    var router &#x3D; new VueRouter(&#123;</span><br><span class="line">      routes: [</span><br><span class="line">        &#123; path: &#39;&#x2F;login&#39;, component: login &#125;,</span><br><span class="line">        &#123; path: &#39;&#x2F;register&#39;, component: register &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></li>
+<li>使用 router 属性来使用路由规则<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 6. 创建 Vue 实例，得到 ViewModel</span><br><span class="line">    var vm &#x3D; new Vue(&#123;</span><br><span class="line">      el: &#39;#app&#39;,</span><br><span class="line">      router: router &#x2F;&#x2F; 使用 router 属性来使用路由规则</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="使用tag属性指定router-link渲染的标签类型"><a href="#使用tag属性指定router-link渲染的标签类型" class="headerlink" title="使用tag属性指定router-link渲染的标签类型"></a>使用tag属性指定router-link渲染的标签类型</h2><h2 id="设置路由重定向"><a href="#设置路由重定向" class="headerlink" title="设置路由重定向"></a>设置路由重定向</h2><h2 id="设置路由高亮"><a href="#设置路由高亮" class="headerlink" title="设置路由高亮"></a>设置路由高亮</h2><h2 id="设置路由切换动效"><a href="#设置路由切换动效" class="headerlink" title="设置路由切换动效"></a>设置路由切换动效</h2><h2 id="在路由规则中定义参数"><a href="#在路由规则中定义参数" class="headerlink" title="在路由规则中定义参数"></a>在路由规则中定义参数</h2><ol>
+<li>在规则中定义参数：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; path: &#39;&#x2F;register&#x2F;:id&#39;, component: register &#125;</span><br></pre></td></tr></table></figure></li>
+<li>通过 <code>this.$route.params</code>来获取路由中的参数：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var register &#x3D; Vue.extend(&#123;</span><br><span class="line">      template: &#39;&lt;h1&gt;注册组件 --- &#123;&#123;this.$route.params.id&#125;&#125;&lt;&#x2F;h1&gt;&#39;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="使用-children-属性实现路由嵌套"><a href="#使用-children-属性实现路由嵌套" class="headerlink" title="使用 children 属性实现路由嵌套"></a>使用 <code>children</code> 属性实现路由嵌套</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;router-link to&#x3D;&quot;&#x2F;account&quot;&gt;Account&lt;&#x2F;router-link&gt;</span><br><span class="line"></span><br><span class="line">  &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  &#x2F;&#x2F; 父路由中的组件</span><br><span class="line">  const account &#x3D; Vue.extend(&#123;</span><br><span class="line">    template: &#96;&lt;div&gt;</span><br><span class="line">      这是account组件</span><br><span class="line">      &lt;router-link to&#x3D;&quot;&#x2F;account&#x2F;login&quot;&gt;login&lt;&#x2F;router-link&gt; | </span><br><span class="line">      &lt;router-link to&#x3D;&quot;&#x2F;account&#x2F;register&quot;&gt;register&lt;&#x2F;router-link&gt;</span><br><span class="line">      &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;&#96;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 子路由中的 login 组件</span><br><span class="line">  const login &#x3D; Vue.extend(&#123;</span><br><span class="line">    template: &#39;&lt;div&gt;登录组件&lt;&#x2F;div&gt;&#39;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 子路由中的 register 组件</span><br><span class="line">  const register &#x3D; Vue.extend(&#123;</span><br><span class="line">    template: &#39;&lt;div&gt;注册组件&lt;&#x2F;div&gt;&#39;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 路由实例</span><br><span class="line">  var router &#x3D; new VueRouter(&#123;</span><br><span class="line">    routes: [</span><br><span class="line">      &#123; path: &#39;&#x2F;&#39;, redirect: &#39;&#x2F;account&#x2F;login&#39; &#125;, &#x2F;&#x2F; 使用 redirect 实现路由重定向</span><br><span class="line">      &#123;</span><br><span class="line">        path: &#39;&#x2F;account&#39;,</span><br><span class="line">        component: account,</span><br><span class="line">        children: [ &#x2F;&#x2F; 通过 children 数组属性，来实现路由的嵌套</span><br><span class="line">          &#123; path: &#39;login&#39;, component: login &#125;, &#x2F;&#x2F; 注意，子路由的开头位置，不要加 &#x2F; 路径符</span><br><span class="line">          &#123; path: &#39;register&#39;, component: register &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">  var vm &#x3D; new Vue(&#123;</span><br><span class="line">    el: &#39;#app&#39;,</span><br><span class="line">    data: &#123;&#125;,</span><br><span class="line">    methods: &#123;&#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">      account</span><br><span class="line">    &#125;,</span><br><span class="line">    router: router</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="命名视图实现经典布局"><a href="#命名视图实现经典布局" class="headerlink" title="命名视图实现经典布局"></a>命名视图实现经典布局</h2><ol>
+<li>标签代码结构：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;content&quot;&gt;</span><br><span class="line">      &lt;router-view name&#x3D;&quot;a&quot;&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">      &lt;router-view name&#x3D;&quot;b&quot;&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure></li>
+<li>JS代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var header &#x3D; Vue.component(&#39;header&#39;, &#123;</span><br><span class="line">      template: &#39;&lt;div class&#x3D;&quot;header&quot;&gt;header&lt;&#x2F;div&gt;&#39;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    var sidebar &#x3D; Vue.component(&#39;sidebar&#39;, &#123;</span><br><span class="line">      template: &#39;&lt;div class&#x3D;&quot;sidebar&quot;&gt;sidebar&lt;&#x2F;div&gt;&#39;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    var mainbox &#x3D; Vue.component(&#39;mainbox&#39;, &#123;</span><br><span class="line">      template: &#39;&lt;div class&#x3D;&quot;mainbox&quot;&gt;mainbox&lt;&#x2F;div&gt;&#39;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 创建路由对象</span><br><span class="line">    var router &#x3D; new VueRouter(&#123;</span><br><span class="line">      routes: [</span><br><span class="line">        &#123;</span><br><span class="line">          path: &#39;&#x2F;&#39;, components: &#123;</span><br><span class="line">            default: header,</span><br><span class="line">            a: sidebar,</span><br><span class="line">            b: mainbox</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">    var vm &#x3D; new Vue(&#123;</span><br><span class="line">      el: &#39;#app&#39;,</span><br><span class="line">      data: &#123;&#125;,</span><br><span class="line">      methods: &#123;&#125;,</span><br><span class="line">      router</span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>CSS 样式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .header &#123;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .content&#123;</span><br><span class="line">    display: flex;</span><br><span class="line">  &#125;</span><br><span class="line">  .sidebar &#123;</span><br><span class="line">    flex: 2;</span><br><span class="line">    border: 1px solid green;</span><br><span class="line">    height: 500px;</span><br><span class="line">  &#125;</span><br><span class="line">  .mainbox&#123;</span><br><span class="line">    flex: 8;</span><br><span class="line">    border: 1px solid blue;</span><br><span class="line">    height: 500px;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="watch属性的使用"><a href="#watch属性的使用" class="headerlink" title="watch属性的使用"></a><code>watch</code>属性的使用</h2><p>考虑一个问题：想要实现 <code>名</code> 和 <code>姓</code> 两个文本框的内容改变，则全名的文本框中的值也跟着改变；（用以前的知识如何实现？？？）</p>
+<ol>
+<li>监听<code>data</code>中属性的改变：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;firstName&quot;&gt; +</span><br><span class="line">    &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;lastName&quot;&gt; &#x3D;</span><br><span class="line">    &lt;span&gt;&#123;&#123;fullName&#125;&#125;&lt;&#x2F;span&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    &#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">    var vm &#x3D; new Vue(&#123;</span><br><span class="line">      el: &#39;#app&#39;,</span><br><span class="line">      data: &#123;</span><br><span class="line">        firstName: &#39;jack&#39;,</span><br><span class="line">        lastName: &#39;chen&#39;,</span><br><span class="line">        fullName: &#39;jack - chen&#39;</span><br><span class="line">      &#125;,</span><br><span class="line">      methods: &#123;&#125;,</span><br><span class="line">      watch: &#123;</span><br><span class="line">        &#39;firstName&#39;: function (newVal, oldVal) &#123; &#x2F;&#x2F; 第一个参数是新数据，第二个参数是旧数据</span><br><span class="line">          this.fullName &#x3D; newVal + &#39; - &#39; + this.lastName;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#39;lastName&#39;: function (newVal, oldVal) &#123;</span><br><span class="line">          this.fullName &#x3D; this.firstName + &#39; - &#39; + newVal;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>监听路由对象的改变：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;login&quot;&gt;登录&lt;&#x2F;router-link&gt;</span><br><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;register&quot;&gt;注册&lt;&#x2F;router-link&gt;</span><br><span class="line"></span><br><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    var login &#x3D; Vue.extend(&#123;</span><br><span class="line">      template: &#39;&lt;h1&gt;登录组件&lt;&#x2F;h1&gt;&#39;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    var register &#x3D; Vue.extend(&#123;</span><br><span class="line">      template: &#39;&lt;h1&gt;注册组件&lt;&#x2F;h1&gt;&#39;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    var router &#x3D; new VueRouter(&#123;</span><br><span class="line">      routes: [</span><br><span class="line">        &#123; path: &quot;&#x2F;login&quot;, component: login &#125;,</span><br><span class="line">        &#123; path: &quot;&#x2F;register&quot;, component: register &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">    var vm &#x3D; new Vue(&#123;</span><br><span class="line">      el: &#39;#app&#39;,</span><br><span class="line">      data: &#123;&#125;,</span><br><span class="line">      methods: &#123;&#125;,</span><br><span class="line">      router: router,</span><br><span class="line">      watch: &#123;</span><br><span class="line">        &#39;$route&#39;: function (newVal, oldVal) &#123;</span><br><span class="line">          if (newVal.path &#x3D;&#x3D;&#x3D; &#39;&#x2F;login&#39;) &#123;</span><br><span class="line">            console.log(&#39;这是登录组件&#39;);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="computed计算属性的使用"><a href="#computed计算属性的使用" class="headerlink" title="computed计算属性的使用"></a><code>computed</code>计算属性的使用</h2><ol>
+<li>默认只有<code>getter</code>的计算属性：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;firstName&quot;&gt; +</span><br><span class="line">    &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;lastName&quot;&gt; &#x3D;</span><br><span class="line">    &lt;span&gt;&#123;&#123;fullName&#125;&#125;&lt;&#x2F;span&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    &#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">    var vm &#x3D; new Vue(&#123;</span><br><span class="line">      el: &#39;#app&#39;,</span><br><span class="line">      data: &#123;</span><br><span class="line">        firstName: &#39;jack&#39;,</span><br><span class="line">        lastName: &#39;chen&#39;</span><br><span class="line">      &#125;,</span><br><span class="line">      methods: &#123;&#125;,</span><br><span class="line">      computed: &#123; &#x2F;&#x2F; 计算属性； 特点：当计算属性中所以来的任何一个 data 属性改变之后，都会重新触发 本计算属性 的重新计算，从而更新 fullName 的值</span><br><span class="line">        fullName() &#123;</span><br><span class="line">          return this.firstName + &#39; - &#39; + this.lastName;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>定义有<code>getter</code>和<code>setter</code>的计算属性：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;firstName&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;lastName&quot;&gt;</span><br><span class="line">    &lt;!-- 点击按钮重新为 计算属性 fullName 赋值 --&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;修改fullName&quot; @click&#x3D;&quot;changeName&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;span&gt;&#123;&#123;fullName&#125;&#125;&lt;&#x2F;span&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    &#x2F;&#x2F; 创建 Vue 实例，得到 ViewModel</span><br><span class="line">    var vm &#x3D; new Vue(&#123;</span><br><span class="line">      el: &#39;#app&#39;,</span><br><span class="line">      data: &#123;</span><br><span class="line">        firstName: &#39;jack&#39;,</span><br><span class="line">        lastName: &#39;chen&#39;</span><br><span class="line">      &#125;,</span><br><span class="line">      methods: &#123;</span><br><span class="line">        changeName() &#123;</span><br><span class="line">          this.fullName &#x3D; &#39;TOM - chen2&#39;;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      computed: &#123;</span><br><span class="line">        fullName: &#123;</span><br><span class="line">          get: function () &#123;</span><br><span class="line">            return this.firstName + &#39; - &#39; + this.lastName;</span><br><span class="line">          &#125;,</span><br><span class="line">          set: function (newVal) &#123;</span><br><span class="line">            var parts &#x3D; newVal.split(&#39; - &#39;);</span><br><span class="line">            this.firstName &#x3D; parts[0];</span><br><span class="line">            this.lastName &#x3D; parts[1];</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="watch、computed和methods之间的对比"><a href="#watch、computed和methods之间的对比" class="headerlink" title="watch、computed和methods之间的对比"></a><code>watch</code>、<code>computed</code>和<code>methods</code>之间的对比</h2><ol>
+<li><code>computed</code>属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。主要当作属性来使用；</li>
+<li><code>methods</code>方法表示一个具体的操作，主要书写业务逻辑；</li>
+<li><code>watch</code>一个对象，键是需要观察的表达式，值是对应回调函数。主要用来监听某些特定数据的变化，从而进行某些具体的业务逻辑操作；可以看作是<code>computed</code>和<code>methods</code>的结合体；</li>
+</ol>
+<h2 id="nrm的安装使用"><a href="#nrm的安装使用" class="headerlink" title="nrm的安装使用"></a><code>nrm</code>的安装使用</h2><p>作用：提供了一些最常用的NPM包镜像地址，能够让我们快速的切换安装包时候的服务器地址；<br>什么是镜像：原来包刚一开始是只存在于国外的NPM服务器，但是由于网络原因，经常访问不到，这时候，我们可以在国内，创建一个和官网完全一样的NPM服务器，只不过，数据都是从人家那里拿过来的，除此之外，使用方式完全一样；</p>
+<ol>
+<li>运行<code>npm i nrm -g</code>全局安装<code>nrm</code>包；</li>
+<li>使用<code>nrm ls</code>查看当前所有可用的镜像源地址以及当前所使用的镜像源地址；</li>
+<li>使用<code>nrm use npm</code>或<code>nrm use taobao</code>切换不同的镜像源地址；</li>
+</ol>
+<h2 id="相关文件"><a href="#相关文件" class="headerlink" title="相关文件"></a>相关文件</h2><ol>
+<li><a href="http://www.cnblogs.com/joyho/articles/4430148.html" target="_blank" rel="noopener">URL中的hash（井号）</a></li>
+</ol>
+
+      </div>
+
+      <div class="article-footer">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">#vue</a></li></ul>
+      </div>
+
+      <div class="article-navs">
+        
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    
+      <div id="article-nav-newer" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(http://39.108.55.37/images/1.jpg)"></div>
+          
+          <a class="card-link article-nav-link" href="/2019/10/28/day2/"></a>
+          <strong class="article-nav-caption">Newer</strong>
+          <p class="article-nav-title">
+            
+              Day2
+            
+          </p>
+        </article>
+      </div>
+    
+    
+      <div id="article-nav-older" class="card-item img">
+        <article>
+          
+            <div class="card-cover" style="background-image: url(http://39.108.55.37/images/2.jpg)"></div>
+          
+          <a class="card-link article-nav-link" href="/2019/10/28/day3/"></a>
+          <strong class="article-nav-caption">Older</strong>
+          <p class="article-nav-title">
+            
+              Day3
+            
+          </p>
+        </article>
+      </div>
+    
+  </div>
+</nav>
+
+      </div>
+      
+      
+
+  
+  <div class="valine-container">
+    <div id="valine_thread" class="valine-thread"></div>
+  </div>
+
+  
+  
+
+
+    </div>
+  </article>
+</div></section>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    <p>&copy; 2019 <a href="/" target="_blank">Syy</a></p>
+
+    
+      <p id="hitokoto"></p>
+      <script src="https://v1.hitokoto.cn/?c=a&amp;encode=js&select=%23hitokoto" defer></script>
+    
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank">flex-block</a></p>
+  </div>
+</footer>
+  </div>
+
+  
+  <!-- 尾部其他内容 -->
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+  <!-- aplayer 音频 start -->
+  
+<link rel="stylesheet" href="/lib/APlayer.min.css">
+
+  
+<script src="/lib/APlayer.min.js"></script>
+
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        new APlayer({
+          container: el,
+          audio: { ...el.dataset },
+          theme: "#b7daff",
+          lrcType: 3,
+          autoplay: false,
+          loop: false,
+          mutex: true,
+        });
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  
+
+<!-- dplayer 视频 start -->
+
+<link rel="stylesheet" href="/lib/DPlayer.min.css">
+
+
+<script src="/lib/DPlayer.min.js"></script>
+
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let cover = el.dataset.cover;
+      new DPlayer({
+        container: el,
+        video: { url: url, pic: cover },
+        theme: "#b7daff",
+        autoplay: false,
+        loop: false,
+        mutex: true,
+      });
+    });
+  }
+</script>
+<!-- dplayer 视频 end -->
+
+
+<!-- waterfall 瀑布流 start -->
+
+<script src="/lib/waterfall.min.js"></script>
+
+<script type="text/javascript">
+
+const waterfalls = document.querySelectorAll(".waterfall-container");
+
+if (waterfalls && waterfalls.length > 0) {
+  waterfalls.forEach((waterfall, index) => {
+    let cls = "waterfall-container-" + index;
+    waterfall.classList.add(cls);
+    initWaterfall(cls, waterfall);
+  });
+}
+
+function initWaterfall(selector, el) {
+  const options = {};
+  if (Object.keys(el.dataset).length > 0) {
+    for (let k in el.dataset) {
+      options[k] = el.dataset[k];
+    }
+  }
+  waterfall(`.${selector}`, options);
+}
+</script>
+<!-- waterfall 瀑布流 end -->
+
+
+  <!-- zoom start -->
+  
+<script src="/lib/zoom.min.js"></script>
+
+  <script type="text/javascript">
+    document.querySelector(".article-content") && zoom(".article-content");
+  </script>
+  <!-- zoom end -->
+  
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
